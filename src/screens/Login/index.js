@@ -8,24 +8,26 @@ import styles from './styles';
 import TInput from "../../components/TInput";
 import { Contained, Outlined } from "../../components/Button";
 import Footer from "../../components/Footer";
+import { FONT_SIZE, SPACING } from "../../styles";
 
 const Login = (props) => {
   return (
     <View>
-      <Box ai_center jc_center>
+      <Box ai_center jc_center><Text style={{ fontSize: FONT_SIZE.xxlarge, fontWeight: '500' }}>SKANK</Text></Box>
+      <Box ai_center jc_center py={SPACING.normal}>
         <Image source={images.profiles} width={null} height={null} />
       </Box>
-      <Box ai_center jc_center style={styles.subtitle_container}>
+      <Box ai_center jc_center style={styles.subtitle_container} py={SPACING.normal}>
         <Text style={styles.subtitle}>Connect privately with social media celebrities, influencers and models.</Text>
       </Box>
       <Box ai_center jc_center style={styles.form}>
         <Box>
           <TInput placeholder="Email or Username" />
         </Box>
-        <Box pt={5}>
+        <Box pt={SPACING.xxsmall}>
           <TInput placeholder="Password" />
         </Box>
-        <Box pt={5}>
+        <Box pt={SPACING.xsmall}>
           <Contained t="Login / Sign Up" />
         </Box>
         <Box pt={5}>

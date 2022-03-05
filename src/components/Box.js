@@ -3,7 +3,19 @@ import {
   View
 } from 'react-native';
 
-export default ({ ai_center, jc_center, pt, pb, pl, pr, py, px, style, ...props }) => {
+export default ({
+  ai_center,
+  jc_center,
+  pt,
+  pb,
+  pl,
+  pr,
+  py,
+  px,
+  row,
+  style,
+  ...props
+}) => {
   const baseStyle = {};
 
   if (ai_center) {
@@ -36,6 +48,9 @@ export default ({ ai_center, jc_center, pt, pb, pl, pr, py, px, style, ...props 
   
   if (pr) {
     baseStyle.paddingRight = pr;
+  }
+  if (row) {
+    baseStyle.flexDirection = 'row';
   }
 
   return <View style={{ ...baseStyle, ...style }} {...props}>{props.children}</View>;
