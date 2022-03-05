@@ -6,7 +6,8 @@ import Box from "../../components/Box";
 
 import styles from './styles';
 import TInput from "../../components/TInput";
-import { Contained } from "../../components/Button";
+import { Contained, Outlined } from "../../components/Button";
+import Footer from "../../components/Footer";
 
 const Login = (props) => {
   return (
@@ -32,11 +33,25 @@ const Login = (props) => {
         </Box>
         <Box pt={5}>
           <Contained t="login">
-            <Icon name="alert-circle" size={70}  />
+            <Text>Login</Text>
+          </Contained>
+          <Contained t="login">
             <Text>Login</Text>
           </Contained>
         </Box>
+        <Box pt={5}>
+          <Box />
+          <Text>OR</Text>
+          <Box />
+        </Box>
+        <Box ai_center jc_center style={styles.subtitle_container}>
+          <Text style={styles.subtitle}>Apply to be a content creator, make money and interact with your social media fans.</Text>
+        </Box>
+        <Box pt={5}>
+          <Outlined t="Apply to be a Creator" />
+        </Box>
       </Box>
+      <Footer />
     </View>
   );
 }
