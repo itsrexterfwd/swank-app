@@ -31,8 +31,8 @@ const icon_size = {
 };
 
 const fonts = {
-  regular: "Quantico-Regular",
-  bold: "Quantico-Bold",
+  regular: "Segoe UI",
+  bold: "Segoe UI Bold",
 };
 
 const styles = {
