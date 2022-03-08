@@ -4,6 +4,7 @@ import {
 } from 'react-native';
 
 export default ({
+  flex,
   ai_center,
   jc_center,
   pt,
@@ -18,6 +19,10 @@ export default ({
 }) => {
   const baseStyle = {};
 
+  if (flex) {
+    baseStyle.flex = flex;
+  }
+  
   if (ai_center) {
     baseStyle.alignItems = 'center';
   }

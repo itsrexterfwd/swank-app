@@ -1,8 +1,8 @@
 export default {
   background: "white",
   foreground: "#1c1c1c",
-  text: "#464646",
-  subtext: "#b6b9bf",
-  hairline: "#d6d6d6",
+  text: "#121212",
+  subtext: "#303637",
+  hairline: "#e8e8e8",
   white: "white",
 };

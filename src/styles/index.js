@@ -8,6 +8,12 @@ export const WINDOW_HEIGHT = Dimensions.get("window").height;
 export const COLORS = {
   light: light_theme_colors,
   dark: dark_theme_colors,
+  common: {
+    blue: "#0094f4",
+    white: "#FFF",
+    dark_1: '#1a2545',
+    hairline: '#a7adb7',
+  }
 };
 
 export const FONT_SIZE = {
@@ -18,6 +24,7 @@ export const FONT_SIZE = {
   normal: 16,
   small: 13,
   xsmall: 11,
+  xxsmall: 9,
 };
 
 export const ICON_SIZE = {
@@ -36,6 +43,11 @@ export const SPACING = {
   xsmall: 11,
   xxsmall: 5,
 };
+
+export const MODE = {
+  LIGHT: 1,
+  DARK: 1,
+}
 
 export const FONTS = {
   regular: "Segoe UI",
