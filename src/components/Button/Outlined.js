@@ -1,6 +1,5 @@
 import React from 'react';
-import Button from "react-native-button";
-import { Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { COLORS, MODE, SPACING } from '../../styles';
 
 export default ({
@@ -17,9 +16,9 @@ export default ({
     default_root.width = '100%';
   }
   return (
-    <Button {...props} containerStyle={[styles.root, fullwidth, style]}>
+    <TouchableOpacity {...props} style={[styles.root, default_root, style]}>
       {!!t ? <Text {...text_props} style={[styles.text, text_props?.style]}>{t}</Text> : children}
-    </Button>
+    </TouchableOpacity>
   );
 }
 
@@ -32,6 +31,9 @@ const styles = StyleSheet.create({
     borderColor: COLORS.common.dark_1,
     width: '100%',
     alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    flexDirection: 'row'
   },
   text: {
     color: COLORS.common.dark_1,

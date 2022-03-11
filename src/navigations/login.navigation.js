@@ -2,15 +2,16 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import LoginScreen from "../screens/Login";
+import Login from "../screens/Login";
+import CreatorLogin from "../screens/CreatorLogin";
 
 import * as app_styles from '../styles';
 
 
-const Login = createNativeStackNavigator();
+const LoginSN = createNativeStackNavigator();
 const LoginStack = (props) => {
   return (
-    <Login.Navigator
+    <LoginSN.Navigator
       initialRouteName="Welcome"
       screenOptions={() => ({
         headerShown: false,
@@ -21,8 +22,9 @@ const LoginStack = (props) => {
         headerRight: () => <View />,
         cardStyle: { backgroundColor: "#f5f5f5" },
       })}>
-      <Login.Screen name="Login" component={LoginScreen} />
-    </Login.Navigator>
+      <LoginSN.Screen name="Login" component={Login} />
+      <LoginSN.Screen name="CreatorLogin" component={CreatorLogin} />
+    </LoginSN.Navigator>
   );
 };
 

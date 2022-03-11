@@ -13,7 +13,7 @@ import { COLORS, SPACING } from '../styles';
 
 export default props => {
   return (
-    <Box>
+    <Box py={15}>
       <Box ai_center jc_center row style={{ flexWrap: 'wrap' }} px={SPACING.xxlarge}>
         <Box px={SPACING.large} pt={SPACING.xsmall}><Link color={COLORS.common.hairline} t="About" /></Box>
         <Box px={SPACING.large} pt={SPACING.xsmall}><Link color={COLORS.common.hairline} t="Legal" /></Box>
