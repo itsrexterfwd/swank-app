@@ -5,6 +5,7 @@ import {
 
 export default ({
   flex,
+  flexDirection,
   ai_center,
   jc_center,
   pt,
@@ -15,9 +16,18 @@ export default ({
   px,
   row,
   style,
+  fullWidth,
   ...props
 }) => {
   const baseStyle = {};
+
+  if (fullWidth) {
+    baseStyle.width = '100%';
+  }
+
+  if (flexDirection) {
+    baseStyle.flexDirection = flexDirection;
+  }
 
   if (flex) {
     baseStyle.flex = flex;

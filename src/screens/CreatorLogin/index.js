@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Text, View, Image, ScrollView, Platform } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import images from '../../constants/images';
@@ -11,8 +11,11 @@ import Footer from "../../components/Footer";
 import Body from "../../components/Body";
 import { COLORS, FONT_SIZE, SPACING, WINDOW_HEIGHT } from "../../styles";
 import Base from "../../components/Base";
+import SocialBtn from "./SocialBtn";
+import GenderBtn from "./GenderBtn";
 
 const CreatorLoginScreen = (props) => {
+  const [selected, setSelected] = useState(undefined);
   return (
     <Base>
       <Box ai_center jc_center pt={SPACING.large}>
@@ -38,40 +41,43 @@ const CreatorLoginScreen = (props) => {
           <Box pb={SPACING.xxsmall}><Text style={{ fontSize: FONT_SIZE.xsmall }}>Password</Text></Box>
           <TInput secureTextEntry={true} placeholder="Password" />
         </Box>
-        <Box pt={SPACING.xsmall}>
+        <Box pt={SPACING.xsmall} fullWidth>
           <Box pb={SPACING.xxsmall}><Text style={{ fontSize: FONT_SIZE.xsmall }}>Where do you have the most followers?</Text></Box>
-          <TInput secureTextEntry={true} placeholder="Password" />
+          <Box>
+            <Box flexDirection="row" ai_center style={{ justifyContent: 'space-between' }}>
+              {(!selected || (!!selected && selected === 1)) && <SocialBtn name="logo-instagram" selected={selected === 1} onPress={() => setSelected(1)} />}
+              {(!selected || (!!selected && selected === 2)) && <SocialBtn name="logo-twitter" selected={selected === 2} onPress={() => setSelected(2)} />}
+              {(!selected || (!!selected && selected === 3)) && <SocialBtn name="logo-facebook" selected={selected === 3} onPress={() => setSelected(3)} />}
+              {(!selected || (!!selected && selected === 4)) && <SocialBtn name="logo-facebook" selected={selected === 4} onPress={() => setSelected(4)} />}
+              {
+                !!selected && 
+                  <>
+                    <Box flex={1} flexDirection="row">
+                      <TInput />
+                    </Box>
+                    <SocialBtn name="close-outline" selected onPress={() => setSelected(undefined)} />
+                  </>
+              }
+            </Box>
+          </Box>
+        </Box>
+        <Box pt={SPACING.xsmall} flexDirection="row" ai_center jc_center>
+          <Box px={15}><Text>I'm</Text></Box>
+          <Box px={5}>
+              <GenderBtn icon="man-outline" name="Male" />
+          </Box>
+          <Box px={5}>
+            <GenderBtn icon="woman-outline" name="Female" />
+          </Box>
         </Box>
         <Box pt={SPACING.xsmall} width="100%">
           <Contained t="Continue" />
         </Box>
-        <Box pt={SPACING.small} jc_center ai_center>
-          <Text style={{ fontSize: FONT_SIZE.xsmall}}>
-            <Text>Already a member? </Text>
-            <Link t="Forgot Password" size={FONT_SIZE.xsmall} />
+        <Box pt={SPACING.small} ai_center jc_center style={{ alignItems: 'center', justifyContent: 'center' }}>
+          <Text style={{ fontSize: FONT_SIZE.xsmall, alignItems: 'center', justifyContent: 'center' }}>
+            <Text style={{fontSize: FONT_SIZE.xsmall }}>Already a member? </Text>
+            <Link t="Sign in" size={FONT_SIZE.xsmall} style={{ marginTop: 15 }} />
           </Text>
-        </Box>
-        <Box pt={SPACING.small} style={styles.social_btn_container}>
-          <Contained style={[styles.social_btn]}>
-            <Icon name="logo-facebook" size={12} color={COLORS.common.white} />
-            <Text style={styles.social_txt}>Login</Text>
-          </Contained>
-          <Box width={5} />
-          <Contained style={[styles.social_btn]}>
-            <Icon name="logo-twitter" size={12} color={COLORS.common.white} />
-            <Text style={styles.social_txt}>Login</Text>
-          </Contained>
-        </Box>
-        <Box style={styles.separator_container} pt={SPACING.small} jc_center ai_center>
-          <Box style={styles.hairline} />
-          <Text style={styles.separator}>OR</Text>
-          <Box style={styles.hairline} />
-        </Box>
-        <Box ai_center jc_center>
-          <Text style={styles.subtitle}>Apply to be a content creator, make money and interact with your social media fans.</Text>
-        </Box>
-        <Box pt={SPACING.normal} width="100%">
-          <Outlined t="Apply to be a Creator" />
         </Box>
       </Box>
     </Base>
