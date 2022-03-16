@@ -2,6 +2,7 @@ import React from "react";
 import { Animated, Easing } from "react-native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginStack from "./login.navigation";
+import DashboardStack from "./dashboard.navigation";
 
 const transitionConfig = () => ({
   transitionSpec: {
@@ -26,6 +27,7 @@ const RootNavigator = () => {
       initialRouteName="LoginStack"
     >
       <Root.Screen name="LoginStack" component={LoginStack} />
+      <Root.Screen name="DashboardStack" component={DashboardStack} />
     </Root.Navigator>
   );
 };

@@ -13,13 +13,17 @@ import { COLORS, FONT_SIZE, SPACING, WINDOW_HEIGHT } from "../../styles";
 import Base from "../../components/Base";
 import SocialBtn from "./SocialBtn";
 import GenderBtn from "./GenderBtn";
+import { useIsLoggedIn } from "../../hooks/isLoggedIn";
+import { navigate } from "../../utils/navigationService";
 
 const CreatorLoginScreen = (props) => {
   const [selected, setSelected] = useState(undefined);
+  const [token, setToken] = useIsLoggedIn();
+  console.log({token });
   return (
     <Base>
       <Box ai_center jc_center pt={SPACING.large}>
-        <Text style={{ fontSize: FONT_SIZE.xxlarge, fontWeight: '500' }}>SKANK</Text>
+        <Text style={{ fontSize: FONT_SIZE.xxlarge, fontWeight: '500' }}>RINE</Text>
         <Text style={{ fontSize: FONT_SIZE.normal, fontWeight: '500', fontStyle: 'italic' }}>Exclusive Fan Club</Text>
       </Box>
       <Box ai_center jc_center style={styles.subtitle_container} py={SPACING.normal}>
@@ -33,15 +37,15 @@ const CreatorLoginScreen = (props) => {
           </Box>
           <TInput keyboardType="email-address" />
         </Box>
-        <Box pt={SPACING.xsmall}>
+        <Box pt={SPACING.small}>
           <Box pb={SPACING.xxsmall}><Text style={{ fontSize: FONT_SIZE.xsmall }}>Email</Text></Box>
           <TInput keyboardType="email-address" placeholder="Email address" />
         </Box>
-        <Box pt={SPACING.xsmall}>
+        <Box pt={SPACING.small}>
           <Box pb={SPACING.xxsmall}><Text style={{ fontSize: FONT_SIZE.xsmall }}>Password</Text></Box>
           <TInput secureTextEntry={true} placeholder="Password" />
         </Box>
-        <Box pt={SPACING.xsmall} fullWidth>
+        <Box pt={SPACING.small} fullWidth>
           <Box pb={SPACING.xxsmall}><Text style={{ fontSize: FONT_SIZE.xsmall }}>Where do you have the most followers?</Text></Box>
           <Box>
             <Box flexDirection="row" ai_center style={{ justifyContent: 'space-between' }}>
@@ -61,23 +65,21 @@ const CreatorLoginScreen = (props) => {
             </Box>
           </Box>
         </Box>
-        <Box pt={SPACING.xsmall} flexDirection="row" ai_center jc_center>
+        <Box pt={SPACING.middle} flexDirection="row" ai_center jc_center>
           <Box px={15}><Text>I'm</Text></Box>
-          <Box px={5}>
-              <GenderBtn icon="man-outline" name="Male" />
+          <Box px={15}>
+              <GenderBtn icon="man" name="Male" />
           </Box>
-          <Box px={5}>
-            <GenderBtn icon="woman-outline" name="Female" />
+          <Box px={15}>
+            <GenderBtn icon="woman" name="Female" />
           </Box>
         </Box>
-        <Box pt={SPACING.xsmall} width="100%">
-          <Contained t="Continue" />
+        <Box pt={SPACING.normal} width="100%">
+          <Contained t="Continue" onPress={() => navigate('DashboardStack')} />
         </Box>
-        <Box pt={SPACING.small} ai_center jc_center style={{ alignItems: 'center', justifyContent: 'center' }}>
-          <Text style={{ fontSize: FONT_SIZE.xsmall, alignItems: 'center', justifyContent: 'center' }}>
+        <Box pt={SPACING.small} flexDirection="row" ai_center jc_center style={{ alignItems: 'center', justifyContent: 'center' }}>
             <Text style={{fontSize: FONT_SIZE.xsmall }}>Already a member? </Text>
-            <Link t="Sign in" size={FONT_SIZE.xsmall} style={{ marginTop: 15 }} />
-          </Text>
+            <Link t="Sign in" size={FONT_SIZE.xsmall}  />
         </Box>
       </Box>
     </Base>

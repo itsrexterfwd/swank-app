@@ -10,10 +10,10 @@ export default StyleSheet.create({
   },
   subtitle: {
     textAlign: 'center',
+    fontWeight: 'bold',
   },
   form: {
     paddingHorizontal: 20,
-    paddingBottom: 20,
   },
   separator_container: {
     flexDirection: 'row',

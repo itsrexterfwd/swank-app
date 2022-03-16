@@ -12,7 +12,7 @@ export const COLORS = {
     blue: "#0094f4",
     white: "#FFF",
     dark_1: '#1a2545',
-    hairline: '#a7adb7',
+    hairline: '#d4d9e2',
   }
 };
 

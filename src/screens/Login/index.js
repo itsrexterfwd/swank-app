@@ -18,8 +18,8 @@ const Login = (props) => {
     navigate('CreatorLogin');
   }
   return (
-    <Base>
-      <Box ai_center jc_center pt={SPACING.large}><Text style={{ fontSize: FONT_SIZE.xxlarge, fontWeight: '500' }}>SKANK</Text></Box>
+    <Base footer={1}>
+      <Box ai_center jc_center pt={SPACING.large}><Text style={{ fontSize: FONT_SIZE.xxlarge, fontWeight: '500' }}>RINE</Text></Box>
       <Box ai_center jc_center py={SPACING.normal}>
         <Image source={images.profiles} width={null} height={null} />
       </Box>
@@ -30,10 +30,10 @@ const Login = (props) => {
         <Box>
           <TInput keyboardType="email-address" placeholder="Email or Username" />
         </Box>
-        <Box pt={SPACING.xxsmall}>
+        <Box pt={SPACING.xsmall}>
           <TInput secureTextEntry={true} placeholder="Password" />
         </Box>
-        <Box pt={SPACING.xsmall} width="100%">
+        <Box pt={SPACING.normal} width="100%">
           <Contained t="Login / Sign Up" />
         </Box>
         <Box pt={SPACING.small}>
@@ -55,10 +55,10 @@ const Login = (props) => {
           <Text style={styles.separator}>OR</Text>
           <Box style={styles.hairline} />
         </Box>
-        <Box ai_center jc_center>
+        <Box ai_center jc_center py={SPACING.middle}>
           <Text style={styles.subtitle}>Apply to be a content creator, make money and interact with your social media fans.</Text>
         </Box>
-        <Box pt={SPACING.normal} width="100%">
+        <Box pt={SPACING.middle} width="100%">
           <Outlined t="Apply to be a Creator" onPress={handleApplyCreatorOnPress} />
         </Box>
       </Box>

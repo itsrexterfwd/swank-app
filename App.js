@@ -35,21 +35,11 @@ const App = () => {
   };
 
   return (
-    // <SafeAreaView style={backgroundStyle}>
-      <>
+    <>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      {/* <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}
-        contentContainerStyle={{ flex: 1 }}
-      >
-        <View style={{ flex: 1, }}> */}
-          {/* Main navigator here */}
-          <AppNavigator />
-        {/* </View>
-      </ScrollView> */}
-      </>
-    // </SafeAreaView>
+        {/* Main navigator here */}
+      <AppNavigator />
+    </>
   );
 };
 
